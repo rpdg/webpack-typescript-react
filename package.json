@@ -1,0 +1,29 @@
+{
+  "name": "ts-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack --display-error-details --config webpack.dev.js",
+    "build:prod": "webpack --display-error-details --config -p webpack.prd.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd-mobile": "^2.0.0-beta.5",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.10",
+    "@types/react-dom": "^16.0.1",
+    "@types/react-redux": "^5.0.10",
+    "@types/redux": "^3.6.0",
+    "ts-loader": "^2.3.7",
+    "awesome-typescript-loader": "^3.2.3",
+    "source-map-loader": "^0.2.2",
+    "typescript": "^2.5.3"
+  }
+}
