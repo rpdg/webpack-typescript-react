@@ -4,6 +4,6 @@ import {Hello, Frameworks} from './components/Hello';
 
 
 ReactDOM.render(
-	<Hello compiler={Frameworks.ts} framework="React" />,
+	<Hello compiler={Frameworks.ts}  />,
 	document.getElementById('example'),
 );

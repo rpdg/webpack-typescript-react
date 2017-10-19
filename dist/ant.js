@@ -88,7 +88,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(1);
 var ReactDOM = __webpack_require__(2);
 var Hello_1 = __webpack_require__(54);
-ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: Hello_1.Frameworks.ts, framework: "React" }), document.getElementById('example'));
+ReactDOM.render(React.createElement(Hello_1.Hello, { compiler: Hello_1.Frameworks.ts }), document.getElementById('example'));
 
 
 /***/ }),
@@ -115,15 +115,27 @@ var React = __webpack_require__(1);
 var Hello = /** @class */ (function (_super) {
     __extends(Hello, _super);
     function Hello() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super.call(this) || this;
+        _this.state = { txt: 'waiting' };
+        return _this;
     }
     Hello.prototype.render = function () {
-        return React.createElement("h1", null,
+        alert(1);
+        return React.createElement("h1", { className: this.state.txt, onClick: this.handleClick.bind(this, "BMW") },
             "Hello from ",
             this.props.compiler,
             " and ",
             this.props.framework,
             "! ");
+    };
+    Hello.prototype.handleClick = function (name, evt) {
+        console.log(this, evt, evt.clientX, name);
+        this.setState({
+            txt: 'clicked'
+        });
+    };
+    Hello.defaultProps = {
+        framework: 'node.js'
     };
     return Hello;
 }(React.Component));
